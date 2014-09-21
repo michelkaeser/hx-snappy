@@ -22,6 +22,11 @@
             <arg value="install" />
             <arg value="mcover" />
         </exec>
+        <exec executable="haxelib">
+            <arg value="git" />
+            <arg value="std" />
+            <arg value="git@git.rackster.ch:MaddinXx/hx-std.git" />
+        </exec>
     </target>
 
     <target name="build-bindings" depends="dependencies" description="Builds the bindings and unit test runners">
