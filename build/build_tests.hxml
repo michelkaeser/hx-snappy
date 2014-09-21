@@ -1,0 +1,18 @@
+# C++
+-cp   api
+-cp   tests
+-main snappy/tests/Runner.hx
+-lib  mcover
+-lib  std
+-cpp  bin/cpp
+-D    HXCPP_M64
+-D    HXCPP_NO_COLOR
+--macro mcover.MCover.coverage([''], ['api'])
+
+# Neko
+--next
+-cp   api
+-cp   tests
+-main snappy/tests/Runner.hx
+-lib  std
+-neko bin/Runner.n
