@@ -2,8 +2,8 @@
 -cp   api
 -cp   tests
 -main snappy/tests/Runner.hx
+-lib  lib
 -lib  mcover
--lib  std
 -cpp  bin/cpp
 -D    HXCPP_M64
 -D    HXCPP_NO_COLOR
@@ -14,5 +14,5 @@
 -cp   api
 -cp   tests
 -main snappy/tests/Runner.hx
--lib  std
+-lib  lib
 -neko bin/Runner.n

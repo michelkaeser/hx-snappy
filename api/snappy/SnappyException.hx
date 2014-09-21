@@ -1,7 +1,7 @@
 package snappy;
 
 import haxe.PosInfos;
-import std.Exception;
+import lib.Exception;
 
 /**
  * Exceptions to be thrown when Exceptions from the C FFI need to be wrapped
