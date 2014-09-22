@@ -87,7 +87,17 @@
         </condition>
     </target>
 
-    <target name="cloc" depends="test" description="Counts the lines of code">
+    <target name="build-api" depends="test" description="Builds the API documentation">
+        <echo>Building the API documentation...</echo>
+        <exec executable="haxe" resultproperty="build-api.code">
+            <arg value="${build}/build_api.hxml" />
+        </exec>
+        <condition property="build-api.failed">
+            <isfailure code="${build-api.code}" />
+        </condition>
+    </target>
+
+    <target name="cloc" depends="build-api" description="Counts the lines of code">
         <echo>Counting lines of code...</echo>
         <exec executable="cloc">
             <arg value="--ignore-whitespace" />
@@ -120,8 +130,9 @@
 
     <target name="exit" depends="cleanup" description="Marks the build as failed if one of the targets failed">
         <fail if="build-bindings.failed">Bindings build step failed. Check output log for more information.</fail>
-        <fail if="build-stest.failed">Unit test build step failed. Check output log for more information.</fail>
+        <fail if="build-tests.failed">Unit test build step failed. Check output log for more information.</fail>
         <fail if="test.failed">Unit tests step failed. Check output log for more information.</fail>
+        <fail if="build-api.failed">Building the API documentation failed. Check output log for more information.</fail>
         <echo>Everything went well. Good job!</echo>
     </target>
 </project>

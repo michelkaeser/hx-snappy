@@ -52,7 +52,6 @@ value hx_snappy_uncompress(value compressed, value compressed_length)
         data       = buffer_data(buf);
     }
 
-
     value val;
     size_t uncompressed_length;
     snappy_status ret = snappy_uncompressed_length(data, data_length, &uncompressed_length);
