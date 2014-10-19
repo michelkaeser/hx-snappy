@@ -2,7 +2,7 @@
 -cp   api
 -cp   tests
 -main snappy/tests/Runner.hx
--lib  lib
+-lib  hext-core
 -lib  mcover
 -cpp  bin/cpp
 -D    HXCPP_M64
@@ -14,5 +14,5 @@
 -cp   api
 -cp   tests
 -main snappy/tests/Runner.hx
--lib  lib
+-lib  hext-core
 -neko bin/Runner.n
